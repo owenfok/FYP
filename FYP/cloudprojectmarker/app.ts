@@ -7,9 +7,9 @@ const testReportBucket = process.env.TestReportBucket;
 console.log(testReportBucket);
 
 export interface GraderEvent {
-  aws_access_key?: string;
-  aws_secret_access_key?: string;
-  aws_session_token?: string;
+  gcp_access_key?: string;
+  gcp_secret_access_key?: string;
+  gcp_session_token?: string;
   graderParameter?: string;
 }
 interface GraderResult {
@@ -34,11 +34,11 @@ export const lambdaHandler = async (
 
   const testDir = "marking/";
 
-  if (event.aws_access_key) {
-    AWS.config.update({
-      accessKeyId: event.aws_access_key,
-      secretAccessKey: event.aws_secret_access_key,
-      sessionToken: event.aws_session_token,
+  if (event.GCP_access_key) {
+    GCP.config.update({
+      accessKeyId: event.gcp_access_key,
+      secretAccessKey: event.gcp_secret_access_key,
+      sessionToken: event.gcp_session_token,
       region: "us-east-1",
     });
   }
@@ -80,7 +80,7 @@ export const lambdaHandler = async (
 
   let runner: any = await waitForTest();
 
-  AWS.config.update({
+  GCP.config.update({
     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
     sessionToken: process.env.AWS_SESSION_TOKEN,
@@ -98,7 +98,7 @@ export const lambdaHandler = async (
 const uploadFile = async (filePathName: string) => {
   var fileBuffer = fs.readFileSync(filePathName);
   var metaData = getContentTypeByFile(filePathName);
-  const s3 = new AWS.S3();
+  const s3 = new GCP.S3();
   const params = {
     ACL: "public-read",
     Bucket: testReportBucket!,
