@@ -27,4 +27,4 @@ https://www.terraform.io/docs/providers/google/d/signed_url.html
 https://cloud.google.com/deployment-manager/docs
 
 https://dsc.community.dev/
-123
+
