@@ -1,0 +1,1 @@
+https://cloud.google.com/vision/product-search/docs/get-list-resources
