@@ -22,7 +22,7 @@ async function listBuckets() {
   }
 }
 
-test('get gcp to save file', async (t) => {
+test('Save file', async (t) => {
 
   if (await listBuckets()) {
     await saveToGCP("tests/CRYUSWONG.png","CRYUSWONG.png");
