@@ -1,5 +1,5 @@
 import test from 'ava';
-import { saveToGCP } from '../src/googleCloudFunctions';
+import { saveToGCP } from '../src/gcloudStorage';
 import { Storage } from '@google-cloud/storage'
 
 
