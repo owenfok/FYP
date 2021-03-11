@@ -12,6 +12,7 @@
   "dependencies": {
     "@ava/typescript": "^1.1.1",
     "@google-cloud/storage": "^5.8.0",
+    "@google-cloud/compute": "^2.4.3",
     "@types/debug": "^4.1.5",
     "@types/yaml": "^1.2.0",
     "ava-cli": "0.0.1",
