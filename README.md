@@ -26,5 +26,9 @@ https://cloud.google.com/deployment-manager/docs
 
 https://dsc.community.dev/
 
+# Command
+
+./setupsh  
+
 
 
