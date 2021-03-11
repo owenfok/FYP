@@ -30,7 +30,7 @@ https://dsc.community.dev/
 
 Setup the environment
 ----------------------
-
+cd ./GCP_marker
 ./setupsh  
 
 Run tests case
