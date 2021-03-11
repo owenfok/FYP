@@ -36,7 +36,7 @@ cd ./GCP_marker
 Run tests case
 ----------------------
 
-npm run test:testUploadToBucket
+npm run test
 
 
 
