@@ -28,7 +28,17 @@ https://dsc.community.dev/
 
 # Command
 
+Setup the environment
+----------------------
+
 ./setupsh  
+
+Run tests case
+----------------------
+
+npm run test:testUploadToBucket
+
+
 
 
 
