@@ -5,10 +5,7 @@
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "scripts": {
-    "test": "",
-    "test:login": "mocha --exit --timeout 120000 -r ts-node/register tests/login.test.ts",
-    "test:functions": "mocha --exit --timeout 120000 -r ts-node/register tests/functions.test.ts",
-    "test:testUploadToBucket": "ava tests/testUploadToBucket.ts",
+    "test": "sh runtest.sh",
     "build": "tsc",
     "patch": "npm version patch"
   },
