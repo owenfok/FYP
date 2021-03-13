@@ -32,7 +32,9 @@ Setup the environment
 ----------------------
 gcloud auth login 
 
-cd ./GCP_marker
+gcloud config set project {PROJECT_ID}
+
+cd ./FYP
 
 ./setup.sh  
 
