@@ -32,7 +32,7 @@ Setup the environment
 ----------------------
 cd ./GCP_marker
 
-./setupsh  
+./setup.sh  
 
 Run tests case
 ----------------------
