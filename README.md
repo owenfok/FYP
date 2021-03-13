@@ -30,6 +30,8 @@ https://dsc.community.dev/
 
 Setup the environment
 ----------------------
+gcloud auth login 
+
 cd ./GCP_marker
 
 ./setup.sh  
