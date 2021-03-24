@@ -34,6 +34,7 @@ gcloud auth login
 
 gcloud config set project {PROJECT_ID}
 
+//gcloud config set project rapid-access-305609
 
 
 cd ./FYP
