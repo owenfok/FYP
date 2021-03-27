@@ -1,0 +1,9 @@
+import * as gcp from "@pulumi/gcp";
+import assert from "assert";
+import "mocha";
+import "chai"
+
+it('should have Compute Engine',  () => {
+    const name = "vm"
+    const zone = "asia-east2-a"
+})
