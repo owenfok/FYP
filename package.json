@@ -9,9 +9,6 @@
     "build": "tsc",
     "patch": "npm version patch"
   },
-  "dependencies": {
-
-  },
   "devDependencies": {
     "@ava/typescript": "^1.1.1",
     "@google-cloud/bigquery": "^5.5.0",
