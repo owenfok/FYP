@@ -1,5 +1,5 @@
 {
-  "name": "ts-gcloud-sdk",
+  "name": "gcp-project",
   "version": "0.1.12",
   "description": "Google Cloud SDK.",
   "main": "build/index.js",
@@ -10,10 +10,12 @@
     "patch": "npm version patch"
   },
   "dependencies": {
+
+  },
+  "devDependencies": {
     "@ava/typescript": "^1.1.1",
     "@google-cloud/bigquery": "^5.5.0",
     "@google-cloud/storage": "^5.8.0",
-    "@google-cloud/compute": "^2.4.3",    
     "@pulumi/pulumi": "^2.24.1",
     "@pulumi/gcp": "^4.16.1",
     "@types/debug": "^4.1.5",
@@ -21,8 +23,6 @@
     "ava-cli": "0.0.1",
     "debug": "^4.1.1",
     "yaml": "^1.7.2"
-  },
-  "devDependencies": {
     "@google-cloud/functions-framework": "^1.7.1",
     "@types/assert": "^1.5.4",
     "@types/chai": "^4.2.3",
@@ -64,7 +64,6 @@
       "ts-node/register"
     ]
   },
-  "author": "AdianWong",
   "keywords": [
     "google",
     "google cloud",
