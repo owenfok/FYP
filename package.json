@@ -22,7 +22,8 @@
     "@types/yaml": "^1.2.0",
     "ava-cli": "0.0.1",
     "debug": "^4.1.1",
-    "yaml": "^1.7.2"
+    "yaml": "^1.7.2",
+    
     "@google-cloud/functions-framework": "^1.7.1",
     "@types/assert": "^1.5.4",
     "@types/chai": "^4.2.3",
