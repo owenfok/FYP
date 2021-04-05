@@ -5,16 +5,14 @@ import { expect } from "chai";
 
 
 describe("Comput Engine", async () => {
-
     const computeInstance = pulumi.output(gcp.compute.getInstance({
         name: "vm",
-        zone: "asia-east2",
-    }));
-    
-    it("Comput Engine instance name VM", async() => {
-        expect(computeInstance.name, "should have instance").to.equal(
-            "vm"
-        );
+        zone: "asia-east2-a"
+        
+    },{async:true}));
+
+    it("should have instance ", async () => {
+        expect(computeInstance.get.name.length, "should have instance").to.equal(2);
     })
 
     it("Comput Engine instance zone in asia-east2", () => {
