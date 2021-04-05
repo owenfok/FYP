@@ -23,7 +23,7 @@ describe("Comput Engine", async () => {
         );
     })
 
-    console.log(computeInstance)
+    //console.log(computeInstance)
 
 })
 
