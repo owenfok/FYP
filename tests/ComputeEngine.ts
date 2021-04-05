@@ -4,19 +4,26 @@ import "mocha";
 import { expect } from "chai";
 
 
+describe("Comput Engine", async () => {
 
-describe("Comput Engine", () => {
-
-    it("One Comput Engine instance ", async () => {
-
-        const WebServer = gcp.compute.getInstance({
-            name: "vm",
-            zone: "asia-east2",
-        });
-
-        expect(1,"should have instance").to.equal(
-            WebServer.catch.name![0]
+    const computeInstance = pulumi.output(gcp.compute.getInstance({
+        name: "vm",
+        zone: "asia-east2",
+    }));
+    
+    it("Comput Engine instance name VM", async() => {
+        expect(computeInstance.name, "should have instance").to.equal(
+            "vm"
         );
     })
+
+    it("Comput Engine instance zone in asia-east2", () => {
+        expect(computeInstance.zone, "should have instance").to.equal(
+            "asia-east2"
+        );
+    })
+
+    console.log(computeInstance)
+
 })
 
