@@ -12,7 +12,7 @@ describe("Comput Engine", async () => {
     },{async:true}));
 
     it("should have instance ", async () => {
-        expect(computeInstance.get.name.length, "should have instance").to.equal(2);
+        expect(computeInstance.get.name.length, "should have instance").to.equal(3);
     })
 
     it("Comput Engine instance zone in asia-east2", () => {
