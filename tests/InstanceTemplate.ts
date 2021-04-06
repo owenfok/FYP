@@ -4,7 +4,7 @@ import "mocha";
 import { expect } from "chai";
 // by name
 
-describe("Comput Engine", async () => {
+describe("InstanceTemplate", async () => {
 
     const generic_regex = pulumi.output(gcp.compute.getInstanceTemplate({
         filter: "name eq generic-tpl-.*",
@@ -12,9 +12,9 @@ describe("Comput Engine", async () => {
         project: "gcp-learning-lab-309612"
     }, { async: true }));
 
-    it("One Comput Engine instance ", async () => {
+    it("One InstanceTemplate ", async () => {
 
-        expect(generic_regex.get.length, "should have instance").to.equal(
+        expect(generic_regex.get.length, "should have InstanceTemplate").to.equal(
             1
         );
 
