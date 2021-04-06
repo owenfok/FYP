@@ -6,27 +6,28 @@ import * as gcp from "@pulumi/gcp";
 
 describe("Try to set alert", () => {
     it("should have 1 alert", async () => {
-        const alertPolicy = new gcp.monitoring.AlertPolicy("alert_policy", {
+        const basic = gcp.monitoring.getNotificationChannel({
+            displayName: "Test Notification Channel",
+        });
+        const alertPolicy = new gcp.monitoring.AlertPolicy("alertPolicy", {
+            displayName: "My Alert Policy",
+            notificationChannels: [basic.then(basic => basic.name)],
             combiner: "OR",
             conditions: [{
+                displayName: "test condition",
                 conditionThreshold: {
+                    filter: "metric.type=\"compute.googleapis.com/instance/disk/write_bytes_count\" AND resource.type=\"gce_instance\"",
+                    duration: "60s",
+                    comparison: "COMPARISON_GT",
                     aggregations: [{
                         alignmentPeriod: "60s",
                         perSeriesAligner: "ALIGN_RATE",
                     }],
-                    comparison: "COMPARISON_GT",
-                    duration: "60s",
-                    filter: "metric.type=\"compute.googleapis.com/instance/disk/write_bytes_count\" AND resource.type=\"gce_instance\"",
                 },
-                displayName: "test condition",
             }],
-            displayName: "My Alert Policy",
-            userLabels: {
-                foo: "bar",
-            }
-        })
+        });
 
-            expect(alertPolicy.displayName, "Should have one alert").to.equal(
-      "My Alert Policy");
+        expect(alertPolicy.displayName, "Should have one alert").to.equal(
+            "My Alert Policy");
     })
 })
