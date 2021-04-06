@@ -1,0 +1,20 @@
+import * as pulumi from "@pulumi/pulumi";
+import * as gcp from "@pulumi/gcp";
+import "mocha";
+import { expect } from "chai";
+
+describe("Comput Engine", async () => {
+    const  InstanceGroup = pulumi.output(gcp.compute.getInstanceGroup({
+        name: "instance-group-name",
+        zone: "us-central1-a",
+    }, { async: true }));
+
+    it("One Comput Engine instance ", async () => {
+
+        expect(InstanceGroup.get.length, "should have instance").to.equal(
+            1
+        );
+
+    });
+
+})
