@@ -3,15 +3,15 @@ import * as gcp from "@pulumi/gcp";
 import "mocha";
 import { expect } from "chai";
 
-describe("Comput Engine", async () => {
+describe("InstanceGroup", async () => {
     const  InstanceGroup = pulumi.output(gcp.compute.getInstanceGroup({
         name: "instance-group-name",
         zone: "us-central1-a",
     }, { async: true }));
 
-    it("One Comput Engine instance ", async () => {
+    it("One InstanceGroup ", async () => {
 
-        expect(InstanceGroup.get.length, "should have instance").to.equal(
+        expect(InstanceGroup.get.length, "should have InstanceGroup").to.equal(
             1
         );
 
