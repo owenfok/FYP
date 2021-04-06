@@ -1,28 +1,21 @@
-const mocha = require('mocha');
-const assert = require('assert');
-const {util} = require('@google-cloud/common');
-const Compute = require('@google-cloud/compute');
+import * as pulumi from "@pulumi/pulumi";
+import * as gcp from "@pulumi/gcp";
+import "mocha";
+import { expect } from "chai";
 
 
-describe('Firewall', () => {
-  let firewall = Compute.Firewall();
+describe("forward", async () => {
 
-  const Compute = {
-    projectId: 'project-id',
-    createFirewall: util.noop,
-  };
-  const firewallName = 'web';
-  const DEFAULT_FIREWALL_NETWORK = 'global/networks/default';
+    const forwarding_rule = pulumi.output(gcp.compute.getForwardingRule({
+        name: "Webforwarding",
+    }, { async: true }));
 
 
-  describe(' firewall', () => {
-    it('should localize compute instance', () => {
-      assert.strictEqual(firewall.compute, Compute);
+    it("One forward ", async () => {
+
+        expect(forwarding_rule.get.length,"should have forward").to.equal(
+            1
+            );
+
     });
-
-    it('should localize the firewall name', () => {
-      assert.strictEqual(firewall.name, firewallName);
-    });
-
-  });
-});
+})
