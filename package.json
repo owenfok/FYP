@@ -7,7 +7,8 @@
   "scripts": {
     "test": "sh runtest.sh > tests/report/report.txt",
     "build": "tsc",
-    "patch": "npm version patch"
+    "patch": "npm version patch",
+    "tests": "mocha --timeout 12000 -r ts-node/register tests/*.ts"
   },
   "devDependencies": {
     "@ava/typescript": "^1.1.1",
