@@ -34,9 +34,6 @@ gcloud auth login
 
 gcloud config set project {PROJECT_ID}
 
-//gcloud config set project rapid-access-305609
-
-
 cd ./FYP
 
 chmod 777 setup.sh
@@ -46,7 +43,10 @@ chmod 777 setup.sh
 Run tests case
 ----------------------
 
-npm run test
+npm run test 
+//Use to run the specified test
+npm run tests
+//Use to run all test
 
 
 
