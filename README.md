@@ -50,6 +50,10 @@ npm run tests
 //Use to run all test
 
 
+Check the result
+---------------------
+cat ./tests/report/report.txt
+
 
 
 
