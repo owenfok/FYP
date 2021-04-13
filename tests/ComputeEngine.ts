@@ -11,10 +11,34 @@ describe("Comput Engine", async () => {
         
     },{async:true}));
 
-    it("should have instance ", async () => {
-        expect(computeInstance.get.length, "should have instance").to.equal(1);
+    const machineName = computeInstance.machineType
+    const instanceZone = computeInstance.zone
+    const instanceBootDisk = computeInstance.bootDisks
+    const instanceDeletionProtestion = computeInstance.deletionProtection
+
+
+    it("Machine type is f1 mirco ", async () => {
+        expect(machineName, "should have instance").to.equal("f1-mirco");
     })
 
+    it("Zone in asia-east2-a ", async () => {
+        expect(instanceZone, "should have instance").to.equal("asia-east2-a");
+    })
+
+    it("Instance BootDisk is ubuntu", async () => {
+        expect(instanceBootDisk, "should have instance").to.equal("ubuntu-1804-bionic-v20210412");
+    })
+        
+    it("Disable instance delete protection ", async () => {
+        expect(instanceDeletionProtestion, "should have instance").to.equal(false);
+    })
+
+
     //console.log(computeInstance)
+    //console.log(machineName)
+    //console.log(instanceZone)
+    //console.log(instanceBootDisk)
+
+
 
 })
