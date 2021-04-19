@@ -1,20 +1,19 @@
-import * as pulumi from "@pulumi/pulumi";
-import * as gcp from "@pulumi/gcp";
-import "mocha";
-import { expect } from "chai";
+import { expect } from "chai"
+import "mocha"
+import * as stack from "./stack.json"
 
-describe("InstanceGroup", async () => {
-    const  InstanceGroup = pulumi.output(gcp.compute.getInstanceGroup({
-        name: "instance-group-name",
-        zone: "us-central1-a",
-    }, { async: true }));
+const a = stack.deployment.resources
+const b = a[0].outputs
+console.log(b)
 
-    it("One InstanceGroup ", async () => {
+describe("Comput Engine", () => {
+    it("'instance group name is instance-group-1", () => {
+        expect(b.InstanceGroupName, "Name should is instance-group-1 ").to.equal('instance-group-1');
+    })
 
-        expect(InstanceGroup.get.length, "should have InstanceGroup").to.equal(
-            1
-        );
 
-    });
+    it("instance group size min 1 and max 1", () => {
+        expect(b.InstanceGroupSize, "should min 1 and max 1 ").to.equal(1);
+    })
 
 })
