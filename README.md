@@ -49,6 +49,8 @@ npm run test
 npm run tests
 //Use to run all test
 
+npm run check
+//marker
 
 Check the result
 ---------------------
