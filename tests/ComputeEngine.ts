@@ -1,4 +1,3 @@
-import * as pulumi from "@pulumi/pulumi";
 import { expect } from "chai"
 import "mocha"
 import * as stack from "./stack.json"
