@@ -1,24 +1,26 @@
 import * as pulumi from "@pulumi/pulumi";
-import * as gcp from "@pulumi/gcp";
-import "mocha";
-import { expect } from "chai";
-// by name
+import { expect } from "chai"
+import "mocha"
+import * as stack from "./stack.json"
 
-describe("InstanceTemplate", async () => {
+const a = stack.deployment.resources
 
-    const generic_regex = pulumi.output(gcp.compute.getInstanceTemplate({
-        filter: "name eq generic-tpl-.*",
-        mostRecent: true,
-        project: "gcp-learning-lab-309612"
-    }, { async: true }));
+const b = a[0].outputs
+//console.log(b)
 
-    it("One InstanceTemplate ", async () => {
+describe("Instance template", () => {
+    it("Machine type using f1 micro ", () => {
+        expect(b.InstanceTemplateMachineType, "Machine type should is f1 mirco").to.equal('f1-micro');
+    })
 
-        expect(generic_regex.get.length, "should have InstanceTemplate").to.equal(
-            1
-        );
 
-    });
+    it("Instance Template Metadata ", () => {
+        expect(b.InstanceTemplateMetadata, "should have metadata").to.equal("sudo vi test.txt");
+    })
 
+    it("Instance template name ", () => {
+
+        expect(b.InstanceTemplateName, " Name should is instance-template-1 ").to.equal("instance-template-1");
+    })
 
 })
