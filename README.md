@@ -35,6 +35,8 @@ curl -fsSL https://get.pulumi.com | sh
 
 pulumi login
 
+mkdir {folder name} && cd {folder name}
+
 pulumi new gcp-typescript -s {account}/{stack name}/dev
 
 gcloud auth login 
