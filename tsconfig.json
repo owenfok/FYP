@@ -75,7 +75,7 @@
     "tests/ComputeEngine.ts",
     "tests/InstanceGroup.ts",
     "tests/InstanceTemplate.ts",
-    "tests/pubsub.ts
+    "tests/pubsub.ts"
     ]
     
 }
