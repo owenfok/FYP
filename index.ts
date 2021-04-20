@@ -1,6 +1,5 @@
 import * as pulumi from "@pulumi/pulumi"
 import * as gcp from "@pulumi/gcp"
-import "mocha"
 
 // Instance 
 const gcn = pulumi.output(gcp.compute.getInstance({
