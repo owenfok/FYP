@@ -5,8 +5,6 @@
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "scripts": {
-    "test": "sh runtest.sh > tests/report/report.txt",
-    "build": "tsc",
     "patch": "npm version patch",
     "tests": "mocha --timeout 12000 -r ts-node/register tests/*.ts",
     "check": "sh markcheck.sh"
