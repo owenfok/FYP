@@ -4,7 +4,7 @@ import * as stack from "../stack.json"
 
 const data = stack.deployment.resources[0].outputs
 
-describe("Comput Engine", () => {
+describe("Instance group", () => {
     it("'instance group name is instance-group-1", () => {
         expect(data.InstanceGroupName, "Name should is instance-group-1 ").to.equal('instance-group-1');
     })
