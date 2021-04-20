@@ -1,6 +1,6 @@
 import { expect } from "chai"
 import "mocha"
-import * as stack from "./stack.json"
+import * as stack from "../stack.json"
 
 const data = stack.deployment.resources[0].outputs
 
