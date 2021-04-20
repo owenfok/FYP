@@ -34,11 +34,6 @@ gcloud auth login
 
 gcloud config set project {PROJECT_ID}
 
-cd ./FYP
-
-chmod 777 setup.sh
-
-./setup.sh  
 
 Run tests case
 ----------------------
