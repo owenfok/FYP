@@ -12,7 +12,7 @@ describe("Comput Engine", () => {
 
 
     it("Zone in asia-east2-a ", () => {
-        expect(b.instanceZone, "should in asia-east2-a").to.equal("asia-east2-a");
+        expect(data.instanceZone, "should in asia-east2-a").to.equal("asia-east2-a");
     })
 
     it("Disable instance delete protection ", () => {
