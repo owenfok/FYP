@@ -35,7 +35,7 @@ curl -fsSL https://get.pulumi.com | sh
 
 pulumi login
 
-mkdir gcp-typescript-123 && cd gcp-typescript-123
+pulumi new gcp-typescript -s {account}/{stack name}/dev
 
 pulumi new gcp-typescript -s {account}/gcp-typescript-123/dev
 
@@ -43,9 +43,9 @@ gcloud auth login
 
 gcloud config set project {PROJECT_ID}
 
-git clone 
+git clone https://github.com/owenfok/FYP.git --ignore node_modules/@types
 
-npm i 
+npm i --legacy-peer-deps
 
 Run tests case
 ----------------------
