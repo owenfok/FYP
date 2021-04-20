@@ -30,6 +30,15 @@ https://dsc.community.dev/
 
 Setup the environment
 ----------------------
+
+curl -fsSL https://get.pulumi.com | sh
+
+pulumi login
+
+mkdir gcp-typescript-123 && cd gcp-typescript-123
+
+pulumi new gcp-typescript -s {account}/gcp-typescript-123/dev
+
 gcloud auth login 
 
 gcloud config set project {PROJECT_ID}
