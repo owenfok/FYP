@@ -5,3 +5,9 @@ const datas = stack.deployment.resources[0].outputs
 
 export {datas}
 //console.log(datas)
+
+/////////////////////////////////////////////////////
+//                                                 //
+//        Export the data from stack.json          //
+//                                                 //
+/////////////////////////////////////////////////////
