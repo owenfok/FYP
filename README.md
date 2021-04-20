@@ -43,6 +43,9 @@ gcloud auth login
 
 gcloud config set project {PROJECT_ID}
 
+git clone 
+
+npm i 
 
 Run tests case
 ----------------------
