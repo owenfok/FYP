@@ -72,10 +72,7 @@
     "**/*.spec.ts"
   ],
   "files":[
-    "tests/ComputeEngine.ts",
-    "tests/InstanceGroup.ts",
-    "tests/InstanceTemplate.ts",
-    "tests/pubsub.ts"
+    "stack.ts"
     ]
     
 }
