@@ -37,8 +37,6 @@ pulumi login
 
 pulumi new gcp-typescript -s {account}/{stack name}/dev
 
-pulumi new gcp-typescript -s {account}/gcp-typescript-123/dev
-
 gcloud auth login 
 
 gcloud config set project {PROJECT_ID}
