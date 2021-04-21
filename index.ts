@@ -48,7 +48,7 @@ export const theRolePermissions = roleinfo.includedPermissions
 
 // pubsub
 const pubsubTopic = pulumi.output(gcp.pubsub.getTopic({
-    name: "abc",
+    name: "MyTopic",
 }, { async: true }));
 
 export const pubsubTopicName = pubsubTopic.name
