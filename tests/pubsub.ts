@@ -5,8 +5,8 @@ import "mocha"
 
 describe("PubSub", () => {
 
-    it("Topic name is abc", () => {
-        expect(datas["pubsubTopicName"], "Name should is abc").to.equal("web");
+    it("Topic name is MyTopic", () => {
+        expect(datas["pubsubTopicName"], "Name should is abc").to.equal("MyTopic");
     })
 
     it("PubSub Topic Labels", () => {
