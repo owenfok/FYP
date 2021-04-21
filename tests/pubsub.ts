@@ -10,7 +10,7 @@ describe("PubSub", () => {
     })
 
     it("PubSub Topic Labels", () => {
-        expect(datas["pubsubTopicLabels"], "Should have Labels ").to.equal({"foo":"a"});
+        expect(datas["pubsubTopicLabels"], "Should have Labels ").to.equal({"key":"ive"});
     })
 
     it("PubSub Topic Message Storage Policies", () => {
