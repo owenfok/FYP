@@ -17,5 +17,15 @@ describe("Instance template", () => {
 
         expect(datas["InstanceTemplateName"], " Name should is instance-template-1 ").to.equal("instance-template-1");
     })
+    
+        it("Instance template disk size ", () => {
+
+        expect(datas["InstanceTemplateDisk "], " size should 10 GB").to.equal(10);
+    })
+    
+        it("Instance template network name ", () => {
+
+        expect(datas["InstanceTemplateNetwork"], " Name should is gateway-1 ").to.equal("gateway-1");
+    })
 
 })
