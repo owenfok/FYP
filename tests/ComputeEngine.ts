@@ -27,4 +27,20 @@ describe("Comput Engine", () => {
         expect(datas["instanceSize"], "should is 10 GB").to.equal(10);
     })
 
+    it("network name ", () => {
+
+        expect(datas["instanceNetwork"], "name should is \"gateway-1\" ").to.equal("gateway-1");
+    })
+
+    it("Enable https ", () => {
+
+        expect(datas["instanceTags"], "should enable https").to.equal("https-server");
+    })
+    
+     it(" Disks enable Auto Delete ", () => {
+
+        expect(datas["instanceDisksAutoDelete"], "should Disks enable Auto Delete").to.equal(true);
+    })
+
+
 })
