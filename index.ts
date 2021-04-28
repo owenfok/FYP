@@ -12,6 +12,10 @@ export const machineName = gcn.machineType
 export const instanceDeletionProtestion = gcn.deletionProtection
 export const instanceImage = gcn.bootDisks[0].initializeParams[0].image
 export const instanceSize = gcn.bootDisks[0].initializeParams[0].size
+export const instanceNetwork = gcn.networkInterfaces[0].name
+export const instanceTags = gcn.tags[0]
+export const instanceDisksAutoDelete = gcn.bootDisks[0].autoDelete
+
 //
 
 // InstanceGroup
