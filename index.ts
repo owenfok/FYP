@@ -37,6 +37,8 @@ const InstanceTemplate = pulumi.output(gcp.compute.getInstanceTemplate({
 export const InstanceTemplateName = InstanceTemplate.name
 export const InstanceTemplateMetadata = InstanceTemplate.metadata
 export const InstanceTemplateMachineType = InstanceTemplate.machineType
+export const InstanceTemplateNetwork = InstanceTemplate.networkInterfaces[0].name
+export const InstanceTemplateDisk = InstanceTemplate.disks[0].diskSizeGb
 //
 
 //  Identity and Access Management
