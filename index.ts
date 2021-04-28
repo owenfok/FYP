@@ -55,3 +55,40 @@ export const pubsubTopicName = pubsubTopic.name
 export const pubsubTopicLabels = pubsubTopic.labels
 export const pubsubTopicMessageStoragePolicies = pubsubTopic.messageStoragePolicies
 //
+
+//VPC///////////////////////////////////
+
+const network = pulumi.output(gcp.compute.getNetwork({
+    name: "gateway-1",
+} ))
+
+export const net = network.name
+
+
+    // ------vpc_subnet public
+const publicsubnet = pulumi.output(gcp.compute.getSubnetwork({
+    name: "public",
+    region: "us-east1",
+} ));
+    // ------vpc_private public
+const privatesubnet = pulumi.output(gcp.compute.getSubnetwork({
+    name: "private",
+    region: "us-east1",
+} ));
+
+
+
+
+//vpc_subnet public
+export const PsubnetName = publicsubnet.name
+export const PsubnetReGion = publicsubnet.region
+export const PsubnetGateway = publicsubnet.gatewayAddress
+export const PsubnetRange = publicsubnet.ipCidrRange
+//vpc_subnet private
+export const PrivateSubnetName = privatesubnet.name
+export const PrivateSubnetRegion = privatesubnet.region
+export const PrivateSubnetGateway = privatesubnet.gatewayAddress
+export const PrivateSubnetRange = privatesubnet.ipCidrRange
+
+
+/////////////////////////////////////
