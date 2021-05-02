@@ -3,7 +3,7 @@ import { expect } from "chai"
 import "mocha"
 
 
-describe("Comput Engine", () => {
+describe("Compute Engine", () => {
     it("Machine type using f1 micro ", () => {
         expect(datas["machineName"], "Machine type should is f1 mirco").to.equal('f1-micro');
     })
