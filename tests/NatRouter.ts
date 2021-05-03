@@ -33,6 +33,6 @@ describe("Add Network", () => {
 
 describe("Choose Route custom", () => {
     it("Choose Route custom", async () => {
-        expect(datas["GetRouteMode"]).to.endsWith("CUSTOM");
+        expect(datas["GetRouteMode"]).to.equal("CUSTOM");
     });
 });
