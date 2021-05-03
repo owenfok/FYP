@@ -98,3 +98,24 @@ export const PrivateSubnetRange = privatesubnet.ipCidrRange
 
 
 /////////////////////////////////////
+
+//natRouter///////
+const my_router = pulumi.output(gcp.compute.getRouter({
+    name: "vpcroute",
+    network: "gateway-1",
+    region: "us-east1"
+}, { async: true }));
+
+
+
+export const GetRouteName = my_router.name
+
+export const GetRouteIpRanges = my_router.bgps[0].advertisedIpRanges[0].range
+
+export const GetRouteRegion = my_router.region
+
+
+export const GetRouteNetWork = my_router.network
+
+export const GetRouteMode = my_router.bgps[0].advertiseMode
+////////
