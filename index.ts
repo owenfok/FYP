@@ -131,3 +131,23 @@ export const GetSecretData = Secret.secretData
 export const GetSecretVersion = Secret.version
 export const GetSecretEnabled = Secret.enabled
 //////////////////////
+
+///CloudFunction///
+const my_function = pulumi.output(gcp.cloudfunctions.getFunction({
+    name: "gcplab",
+    region:"us-east1"
+}, { async: true }));
+
+export const GetCloudFunction = my_function.name
+export const GetCloudFunctionRegion = my_function.region
+export const GetCloudFunctionEntryPt = my_function.entryPoint
+export const GetCloudFunctionTriggers = my_function.eventTriggers[0].eventType
+export const GetCloudFunctionPolicies = my_function.eventTriggers[0].failurePolicies[0].retry
+export const GetCloudFunctionResource = my_function.eventTriggers[0].resource
+export const GetCloudFunctionIngress = my_function.ingressSettings
+
+export const GetCloudFunctionRuntime = my_function.runtime
+export const GetCloudFunctionTimeout = my_function.timeout
+export const GetCloudFunctionVpcConnector = my_function.vpcConnector
+export const GetCloudFunctionVPCsetting = my_function.vpcConnectorEgressSettings
+///////////////////
