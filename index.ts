@@ -119,3 +119,15 @@ export const GetRouteNetWork = my_router.network
 
 export const GetRouteMode = my_router.bgps[0].advertiseMode
 ////////
+
+//secret manager///////
+const Secret = pulumi.output(gcp.secretmanager.getSecretVersion({
+    secret: "your_secret",
+}, { async: true }));
+
+
+export const GetSecret = Secret.name
+export const GetSecretData = Secret.secretData
+export const GetSecretVersion = Secret.version
+export const GetSecretEnabled = Secret.enabled
+//////////////////////
