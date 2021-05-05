@@ -1,33 +1,18 @@
-
-import { assert, expect } from "chai";
-import "mocha";
-import * as pulumi from "@pulumi/pulumi";
-import * as gcp from "@pulumi/gcp";
+import { datas } from "../stack"
+import { expect } from "chai"
+import "mocha"
 
 describe("Try to set alert", () => {
-    it("should have 1 alert", async () => {
-        const basic = gcp.monitoring.getNotificationChannel({
-            displayName: "Test Notification Channel",
-        });
-        const alertPolicy = new gcp.monitoring.AlertPolicy("alertPolicy", {
-            displayName: "My Alert Policy",
-            notificationChannels: [basic.then(basic => basic.name)],
-            combiner: "OR",
-            conditions: [{
-                displayName: "test condition",
-                conditionThreshold: {
-                    filter: "metric.type=\"compute.googleapis.com/instance/disk/write_bytes_count\" AND resource.type=\"gce_instance\"",
-                    duration: "60s",
-                    comparison: "COMPARISON_GT",
-                    aggregations: [{
-                        alignmentPeriod: "60s",
-                        perSeriesAligner: "ALIGN_RATE",
-                    }],
-                },
-            }],
-        });
-
-        expect(alertPolicy.displayName, "Should have one alert").to.equal(
-            "My Alert Policy");
+    it("should have email", async () => {
+        expect(datas["notiType"], "Should have email").to.equal("Email");
+    })
+    it("Noticification channel should have name 'gcp noti'", async () => {
+        expect(datas["notiDisplayName"], "Display name should be 'gcp noti'").to.equal("gcp noti");
+    })
+    it("Noticification channel should be enabled", async () => {
+        expect(datas["notiStatus"], "Status should be enabled").to.equal(true);
+    })
+    it("At least 1 contact should be set", async () => {
+        expect(datas["notiLabels"], "At least 1 contact should be set").to.equal(true);
     })
 })
