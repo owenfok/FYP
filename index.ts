@@ -18,14 +18,34 @@ export const instanceDisksAutoDelete = gcn.bootDisks[0].autoDelete
 
 //
 
-// InstanceGroup
-const InstanceGroup = pulumi.output(gcp.compute.getInstanceGroup({
-    name: "instance-group-1",
-    zone: "asia-east2-a"
-}, { async: true }));
+//  Identity and Access Management
+const viewer = pulumi.output(gcp.iam.getRule({
+    name: "roles/compute.viewer", 
+} ));
 
-export const InstanceGroupName = InstanceGroup.name
-export const InstanceGroupSize = InstanceGroup.size
+//export const roleinfo = viewer
+
+export const viewerId = viewer.id
+export const viewerTitle =  viewer.title
+export const viewerPermissions = viewer.includedPermissions.length
+
+
+const testing = pulumi.output(gcp.iam.getRule({
+    name: "projects/gcp-learning-lab-309612/roles/testing", 
+} ));
+
+//export const testinginfo = testing
+
+export const testingId = testing.id
+export const testingTitle = testing.title
+export const testingPermissions = testing.includedPermissions.length
+
+
+export const testingP1 = testing.includedPermissions[0]
+export const testingP2 = testing.includedPermissions[1]
+export const testingP3 = testing.includedPermissions[2]
+export const testingP4 = testing.includedPermissions[3]
+export const testingP5 = testing.includedPermissions[4]
 //
 
 // Instance Template
@@ -150,4 +170,55 @@ export const GetCloudFunctionRuntime = my_function.runtime
 export const GetCloudFunctionTimeout = my_function.timeout
 export const GetCloudFunctionVpcConnector = my_function.vpcConnector
 export const GetCloudFunctionVPCsetting = my_function.vpcConnectorEgressSettings
+
+//
+
+
+// dns
+const envDnsZone = pulumi.output(gcp.dns.getManagedZone({
+    name: "qa-zone",
+} ));
+
+//export const env = envDnsZone
+
+export const dnsName = envDnsZone.name
+export const dnsVisability = envDnsZone.visibility
+export const dnsNameServers = envDnsZone.nameServers.length
+
+//
+
+//monitoring(notification)
+const noti = pulumi.output(gcp.monitoring.getNotificationChannel({
+    displayName: "gcp noti",
+} ));
+
+//export const notiinfo = noti
+
+export const notiType = noti.type
+export const notiDisplayName = noti.displayName
+export const notiStatus = noti.enabled
+export const notiLabels = noti.labels
+
+//
+
+
+//sql
+const database = pulumi.output(gcp.sql.getDatabaseInstance({
+    name: "test-sql-instance",
+} ));
+
+//export const db = database
+
+export const databaseName = database.name
+export const databaseVersion = database.databaseVersion
+export const databaseRegion = database.region
+
+export const dbCrashSafe = database.settings[0].crashSafeReplication
+export const dbDiskSize = database.settings[0].diskSize
+export const dbAutoSize = database.settings[0].diskAutoresize
+export const dbDiskType = database.settings[0].diskType
+export const dblocation = database.settings[0].locationPreferences[0].zone
+export const dbpricing = database.settings[0].pricingPlan
+export const dbinstance = database.settings[0].tier
+
 ///////////////////
