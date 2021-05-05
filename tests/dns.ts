@@ -1,20 +1,21 @@
+import  { datas} from "../stack"
+import { expect } from "chai"
+import "mocha"
 
-import { assert, expect } from "chai";
-import "mocha";
-import * as pulumi from "@pulumi/pulumi";
-import * as gcp from "@pulumi/gcp";
+describe("DNS", () => {
 
-describe("setup dns", () => {
-    it("should have one domain ", async () => {
-        const example_zone = new gcp.dns.ManagedZone("example-zone", {
-            description: "Example DNS zone",
-            name: "my-domain",
-            dnsName: "my-domain.com",
-            labels: {
-                foo: "bar",
-            },
-        });
-        expect(example_zone.dnsName, "with DNS name (my-domain.com)").to.equal(
-            "my-domain.com");
+
+    it("dnsName should be 'qa-zone' ", async () => {
+        expect(datas["dnsName"], "should have name 'qa-zone'").to.equal("qa-zone");
     })
+
+    it("Should be private ", async () => {
+        expect(datas["dnsVisability"], "Should be private").to.equal("private");
+    })
+
+    it("Should be only 1 nameserver", async () => {
+        expect(datas["dnsNameServers"], "Should be only 1 nameserver").to.equal(1);
+    })
+
 })
+
