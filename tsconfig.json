@@ -15,8 +15,7 @@
         "forceConsistentCasingInFileNames": true
     },
     "files": [
-        "index.ts",
-        "stack.ts"
+        "index.ts"
         
     ]
 }
