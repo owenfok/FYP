@@ -50,6 +50,9 @@ npm i --legacy-peer-deps
 Run tests case
 ----------------------
 
+pulumi up -y
+//run two time before use npm run
+
 npm run test 
 //Use to run the specified test
 
