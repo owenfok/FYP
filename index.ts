@@ -5,7 +5,7 @@ import * as gcp from "@pulumi/gcp"
 const gcn = pulumi.output(gcp.compute.getInstance({
     name: "vm",
     zone: "asia-east2-a"
-}, { async: true }))
+}))
 
 export const instanceZone = gcn.zone
 export const machineName = gcn.machineType
@@ -52,7 +52,7 @@ export const testingP5 = testing.includedPermissions[4]
 const InstanceTemplate = pulumi.output(gcp.compute.getInstanceTemplate({
     name: "instance-template-1",
     project: ""
-}, { async: true }));
+}));
 
 export const InstanceTemplateName = InstanceTemplate.name
 export const InstanceTemplateMetadata = InstanceTemplate.metadata
@@ -64,7 +64,7 @@ export const InstanceTemplateDisk = InstanceTemplate.disks[0].diskSizeGb
 //  Identity and Access Management
 const roleinfo = pulumi.output(gcp.iam.getRule({
     name: "roles/compute.viewer",
-}, { async: true }));
+}));
 
 export const theRoleId = roleinfo.id
 export const theRoleName = roleinfo.name
@@ -75,7 +75,7 @@ export const theRolePermissions = roleinfo.includedPermissions
 // pubsub
 const pubsubTopic = pulumi.output(gcp.pubsub.getTopic({
     name: "MyTopic",
-}, { async: true }));
+}));
 
 export const pubsubTopicName = pubsubTopic.name
 export const pubsubTopicLabels = pubsubTopic.labels
@@ -124,7 +124,7 @@ const my_router = pulumi.output(gcp.compute.getRouter({
     name: "vpcroute",
     network: "gateway-1",
     region: "us-east1"
-}, { async: true }));
+}));
 
 
 
@@ -143,7 +143,7 @@ export const GetRouteMode = my_router.bgps[0].advertiseMode
 //secret manager///////
 const Secret = pulumi.output(gcp.secretmanager.getSecretVersion({
     secret: "your_secret",
-}, { async: true }));
+}));
 
 
 export const GetSecret = Secret.name
